@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Virtual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="search">
+          <div class="logo">
+            <a class="logo" href="./index.html">
+              <img src="./assets/tiendamia-logo.svg" width="218" alt="Logo store" />
+            </a>
+          </div>
+          <div class="form">
+            <form>
+              <input type="text" placeholder="Search"/>
+            </form>
+          </div>
+          <div class="social">
+            <ul>
+              <li><img src="./assets/facebook.png" alt="icono facebook"></li>
+              <li><img src="./assets/instagram.png" alt="icono instagram"></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div id="nav" class="nav">
+          <ul>
+            <li><a href="#">Ofertas de la semana</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#">Marcas</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section id="hero">
+      <div class="container">
+        <div class="title-container">
+          <span>tecnología</span>
+          <span>renovada</span>
+        </div>
+      </div>
+    </section>
+    
+    <main>
+      <div class="container">
+        <div id="products" class="product-container">
+
+          <!-- html card below -->
+          <!-- <a class="product-card" href="./details.html">
+            <img class="product-img" src="assets/mock1.jpg" alt="Macbook Pro" />
+            <div class="product-info">
+              <span class="product-title">Macbook Pro 15'4</span>
+              <span class="product-description">Space Gray</span>
+              <div class="product-price-block">
+                <span class="price">$750.000</span>
+                <span class="discount">50% Off</span>
+              </div>
+              <div class="product-tax-policy">Incluye impuesto País y percepción AFIP</div>
+            </div>
+          </a> -->
+        </div>
+      </div>
+    </main>
+    
+    <footer id="footer">
+      <div class="container">
+        <div class="columns-container">
+          <div class="col">
+            <ul>
+              <li class="col-main-item"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li class="col-main-item"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">Curso de HTML + CSS 2023</div>
+      </div>
+    </footer>
+    <script src="./scripts/layout.js"></script>
+    <script src="./scripts/products.js"></script>
+    <script src="./scripts/productCards.js"></script>
+    <script src="./scripts/filterProducts.js"></script>
+  </body>
+</html>
