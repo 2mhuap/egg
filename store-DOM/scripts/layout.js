@@ -10,20 +10,13 @@ const options = [
   { title: "Marcas js", linkTo: "./brands.html" },
 ];
 
-// for (let option of options) {
-//   const anchor = document.createElement("a");
-//   anchor.className = "nav-button";
-//   anchor.textContent = option.title;
-//   anchor.href = option.linkTo;
-// }
-  
 for (let i = 0; i < 4; i++) {
   const option = options[i];
   const navEl = navSelector[i];
   // const anchor = document.createElement("a");
   // anchor.className = "nav-button";
   const anchor = navEl.querySelector("a");
-  anchor.textContent = option.title;
+  // anchor.textContent = option.title;
   anchor.href = option.linkTo;
   navEl.appendChild(anchor);
 }
@@ -37,27 +30,27 @@ const optionsFooter = [
   {
     title: "Ofertas de la semana",
     linkTo: "./outlet.html",
-    opts: ["Laptops", "Audio", "Auticulares"]
+    opts: ["Laptops", "Audio", "Auticulares"],
   },
   {
     title: "Cómo comprar",
     linkTo: "./how.html",
-    opts: ["Formas de pago", "Envios", "Devoluciones"]
+    opts: ["Formas de pago", "Envios", "Devoluciones"],
   },
   {
     title: "Costos y tarifas",
     linkTo: "./taxes.html",
-    opts: ["Impuestos", "Facturación"]
+    opts: ["Impuestos", "Facturación"],
   },
   {
     title: "Mis pedidos",
     linkTo: "./orders.html",
-    opts: ["Pedir nuevamente", "Lista de deseos"]
+    opts: ["Pedir nuevamente", "Lista de deseos"],
   },
   {
     title: "Garantía de Entrega",
     linkTo: "./warranty.html",
-    opts: []
+    opts: [],
   },
 ];
 

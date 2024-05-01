@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/cart.css" />
   </head>
   <body>
     <header>
@@ -52,29 +52,36 @@
     <section id="hero">
       <div class="container">
         <div class="title-container">
-          <span>tecnología</span>
-          <span>renovada</span>
+          <span>mi</span>
+          <span>carrito</span>
         </div>
       </div>
     </section>
     
     <main>
       <div class="container">
-        <div id="products" class="product-container">
-
-          <!-- html card below -->
-          <!-- <a class="product-card" href="./details.html">
-            <img class="product-img" src="assets/mock1.jpg" alt="Macbook Pro" />
-            <div class="product-info">
-              <span class="product-title">Macbook Pro 15'4</span>
-              <span class="product-description">Space Gray</span>
-              <div class="product-price-block">
-                <span class="price">$750.000</span>
-                <span class="discount">50% Off</span>
+        <div id="cart-products">
+          <!-- <div class="product-info">
+            <img src="./assets/mock1.jpg" alt="prodImg">
+            <div class="product-details">
+              <p class="prod-name">Apple</p>
+              <p class="prod-color">color</p>
+              <div class="input-price-group">
+                <input type="number" value="1" min="1">
+                <p>$75000</p>
               </div>
-              <div class="product-tax-policy">Incluye impuesto País y percepción AFIP</div>
             </div>
-          </a> -->
+          </div> -->
+        </div>
+        <div id="total">
+          <h3>Resumen del pedido</h3>
+          <div id="subtotal">
+            <p>Subtotal</p>
+            <p>S/<span id="total-span"></span></p>
+          </div>
+
+          <p class="small">Incluye impuesto PAIS y percepción AFIP</p>
+          <button class="btn-primary">Finaliza tu compra</button>
         </div>
       </div>
     </main>
@@ -122,8 +129,6 @@
       </div>
     </footer>
     <script src="./scripts/layout.js"></script>
-    <script src="./scripts/products.js"></script>
-    <script src="./scripts/productCards.js"></script>
-    <script src="./scripts/filterProducts.js"></script>
+    <script src="./scripts/cart.js"></script>
   </body>
 </html>

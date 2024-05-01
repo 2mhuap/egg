@@ -81,11 +81,24 @@ header .logo img {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  gap: 8px;
+  gap: 12px;
 }
 
 .social ul li:last-child img {
   margin-top: 2px;
+}
+
+.social #cart-icon {
+  width: 30px;
+  margin-left: -2px;
+}
+
+.social #fb-icon {
+  width: 24px;
+}
+
+.social #insta-icon {
+  margin-bottom: -2px;
 }
 
 .search img {
@@ -194,6 +207,8 @@ main .columns-container {
   grid-row: 1/5;
   grid-column: 2/5;
   margin-left: 4px;
+  max-height: 350px;
+  object-fit: contain;
 }
 
 /* ---- Description ------ */
@@ -253,13 +268,13 @@ form.selector select {
 }
 
 .checkout-description {
-  line-height: 20.4px;
   word-wrap: break-word;
 }
 
 .checkout-policy-list {
   list-style-type: none;
   margin-bottom: 28px;
+  padding-left: 24px;
 }
 
 .checkout-policy-list li {
@@ -268,12 +283,12 @@ form.selector select {
 }
 
 .checkout-policy-list li .policy-icon {
-  margin-right: 12px;
+  margin-right: 8px;
 }
 
 .checkout-process .top {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .checkout-process .top input {

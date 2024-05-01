@@ -43,8 +43,8 @@ const macImg = "./assets/mock2.jpg";
 const prod1 = new Product(
   "id001",
   "Apple Watch SE (2nd gen) - GPS - 40mm - Starlight - Aluminum - Sport Band - S/M",
-  "905",
-  "10",
+  905,
+  10,
   [
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_65219_mirakl_image_1_small.jpg",
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_65219_mirakl_image_2_small.jpg",
@@ -52,7 +52,7 @@ const prod1 = new Product(
   ],
   true,
   "Apple",
-  ["Black", "Silver", "Gold"],
+  ["Gold", "Black", "Silver"],
   `Water resistence: Water-Resistant
   Screen size smartwatch: 1.5"
   Band material type: Silicone
@@ -61,8 +61,8 @@ const prod1 = new Product(
 const prod2 = new Product(
   "id002",
   "iPad 9.7 128GB - Gold - (Wi-Fi) - (Refurbished)",
-  "825",
-  "10",
+  825,
+  10,
   [
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_22014_mirakl_image_1.jpg",
   ],
@@ -77,8 +77,8 @@ const prod2 = new Product(
 const prod3 = new Product(
   "id003",
   '2015 Apple MacBook Air, 13.3",1.6GHz, Dual Core i5, 4GB RAM,128GB SSD(Renewed)',
-  "985",
-  "10",
+  985,
+  10,
   [
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_110150_mirakl_image_1_small.jpg",
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_110150_mirakl_image_2_small.jpg",
@@ -95,8 +95,8 @@ const prod3 = new Product(
 const prod4 = new Product(
   "id004",
   "JBL Go 3: Portable Speaker with Bluetooth, Builtin Battery, Waterproof and Dustproof Feature Gray JBLGO3GRYAM",
-  "169",
-  "10",
+  169,
+  10,
   [
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_210089_mirakl_image_1_small.jpg",
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_210089_mirakl_image_2_small.jpg",
@@ -110,8 +110,8 @@ const prod4 = new Product(
 const prod5 = new Product(
   "id005",
   "JBL TUNER XL FM Portable Speaker, Bluetooth Radio One Touch FM, Outdoor Convenient Bluetooth Audio",
-  "545",
-  "10",
+  545,
+  10,
   [
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_110189_mirakl_image_1_small.jpg",
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_110189_mirakl_image_2_small.jpg",
@@ -125,8 +125,8 @@ const prod5 = new Product(
 const prod6 = new Product(
   "id006",
   "Apple AirPods Pro -1st Generation with MagSafe (Renewed Premium)",
-  "485",
-  "10",
+  485,
+  10,
   [
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_111408_mirakl_image_1_small.jpg",
     "https://static-catalog.tiendamia.com/marketplace_images/production/product_111408_mirakl_image_2_small.jpg",
