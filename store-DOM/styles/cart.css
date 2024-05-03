@@ -199,16 +199,21 @@ main .container>div {
   font-weight: bold;
 }
 
+.prod-color {
+  text-transform: capitalize;
+}
+
 .input-price-group {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .input-price-group input {
   border-radius: 8px;
-  width: 40px;
+  width: 30px;
   border: none;
-  margin-right: 8px;
+  margin-left: 8px;
   padding: 0 12px;
   height: 40px;
 }
@@ -248,6 +253,12 @@ h3 {
   border: none;
   border-radius: 8px;
   padding: 12px;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  background-color: #909090;
+  cursor: auto;
 }
 
 /* Footer -------- */

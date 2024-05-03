@@ -1,4 +1,9 @@
-const cart = JSON.parse(localStorage.getItem("cart"));
+let cart = [];
+
+function updateCart() {
+  const storageCart = JSON.parse(localStorage.getItem("cart"));
+  cart = storageCart ? storageCart : [];
+}
 
 function createCartCard(prod) {
   return `
@@ -8,8 +13,8 @@ function createCartCard(prod) {
       <p class="prod-name">${prod.title}</p>
       <p class="prod-color">${prod.color}</p>
       <div class="input-price-group">
-        <input type="number" value="${prod.quantity}" readonly>
-        <p>S/${prod.price}</p>
+        <p>S/${prod.price} x </p>
+        <input id="${prod.id}" type="number" value="${prod.quantity}" onchange="changeQuantity(event)">
       </div>
     </div>
   </div>
@@ -18,11 +23,18 @@ function createCartCard(prod) {
 
 function printCartCards() {
   const productsSelector = document.getElementById("cart-products");
-  let productsTemplate = ``;
 
-  cart.forEach(p => (productsTemplate += createCartCard(p)));
+  if (cart.length) {
+    let productsTemplate = ``;
 
-  productsSelector.innerHTML = productsTemplate;
+    cart.forEach(p => {
+      productsTemplate += createCartCard(p);
+    });
+
+    productsSelector.innerHTML = productsTemplate;
+  } else {
+    productsSelector.textContent = "No hay productos en el carrito";
+  }
 }
 
 function updateTotal() {
@@ -31,7 +43,20 @@ function updateTotal() {
 
   const totalSelector = document.getElementById("total-span");
   totalSelector.textContent = total;
+
+  const buySelector = document.getElementById("buy-button");
+  const disableBuy = cart.length == 0;
+  buySelector.disabled = disableBuy;
 }
 
+updateCart();
 printCartCards();
 updateTotal();
+
+function changeQuantity(e) {
+  console.log(e.target.id);
+  const product = cart.find(p => p.id == e.target.id);
+  product.quantity = Number(e.target.value);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateTotal();
+}
