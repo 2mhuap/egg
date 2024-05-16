@@ -1,4 +1,4 @@
-function renderLayout(options, optionsFooter) {
+export default function renderLayout(options, optionsFooter) {
   // Actividad: Renderizando la barra de navegación del store
 
   // const navSelector = document.getElementById("nav");
@@ -25,7 +25,7 @@ function renderLayout(options, optionsFooter) {
   // Actividad: Renderizando el pie de página del store
 
   // const footerSelector = document.querySelector("#footer");
-  const footerSelector = document.querySelectorAll("footer ul");
+  const footerSelector = document.querySelectorAll("#footer ul");
 
   // const optionsFooter = [
   //   {
@@ -76,19 +76,3 @@ function renderLayout(options, optionsFooter) {
     }
   }
 }
-
-async function fetchOptions() {
-  try {
-    const response = await fetch("./options.json");
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    const data = await response.json();
-    renderLayout(data.navigation, data.optionsFooter);
-    console.log("fetched options");
-  } catch (error) {
-    console.error("Error loading layout: ", error);
-  }
-}
-
-fetchOptions();

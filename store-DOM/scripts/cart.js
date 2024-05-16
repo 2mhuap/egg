@@ -1,3 +1,9 @@
+// updateCart
+// createCartCard
+// printCartCards
+// updateTotal
+// changeQuantity
+
 let cart = [];
 
 function updateCart() {
@@ -14,7 +20,10 @@ function createCartCard(prod) {
       <p class="prod-color">${prod.color}</p>
       <div class="input-price-group">
         <p>S/${prod.price} x </p>
-        <input id="${prod.id}" type="number" value="${prod.quantity}" onchange="changeQuantity(event)">
+        <input id="input-${prod.id}" type="number" value="${prod.quantity}" onchange="changeQuantity(event)">
+      </div>
+      <div class="fav-row">
+        <i class="fa-solid fa-heart" id="fav-${prod.id}" onclick="favorite(event)"></i>
       </div>
     </div>
   </div>
@@ -38,8 +47,12 @@ function printCartCards() {
 }
 
 function updateTotal() {
-  let total = 0;
-  cart.forEach(p => (total += p.price * p.quantity));
+  // let total = 0;
+  // cart.forEach(p => (total += p.price * p.quantity));
+  const total = cart.reduce(
+    (acc, { price, quantity }) => acc + price * quantity,
+    0
+  );
 
   const totalSelector = document.getElementById("total-span");
   totalSelector.textContent = total;
@@ -49,14 +62,15 @@ function updateTotal() {
   buySelector.disabled = disableBuy;
 }
 
-updateCart();
-printCartCards();
-updateTotal();
-
 function changeQuantity(e) {
-  console.log(e.target.id);
-  const product = cart.find(p => p.id == e.target.id);
+  // console.log(e.target.id);
+  const prodId = e.target.id.substring(6);
+  const product = cart.find(p => p.id == prodId);
   product.quantity = Number(e.target.value);
   localStorage.setItem("cart", JSON.stringify(cart));
   updateTotal();
 }
+
+updateCart();
+printCartCards();
+updateTotal();

@@ -140,10 +140,10 @@ const prod6 = new Product(
 
 const products = [prod1, prod2, prod3, prod4, prod5, prod6];
 
-// console.log(JSON.stringify(products));
-
 products.sort((p1, p2) => {
   const t1 = p1.title.toUpperCase();
   const t2 = p2.title.toUpperCase();
   return t1.localeCompare(t2);
 });
+
+export default products;

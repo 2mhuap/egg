@@ -1,9 +1,9 @@
-const query = location.search;
-const params = new URLSearchParams(query);
-const idParam = params.get("id");
-// console.log(id);
+// printDetails
+// changeMini
+// changeSubtotal
+// saveProduct
 
-function printDetails(id) {
+function printDetails(id, products) {
   const product = products.find(each => each.id === id);
   document.title = product.title;
 
@@ -56,8 +56,6 @@ function printDetails(id) {
   subtotalSelector.textContent = product.price;
 }
 
-printDetails(idParam);
-
 function changeMini(e) {
   const clickedSrc = e.target.src;
   const bigSelector = document.querySelector(".main-image");
@@ -101,3 +99,23 @@ function saveProduct(prod) {
     localStorage.setItem("cart", stringifyProduct);
   }
 }
+
+async function fetchProducts() {
+  try {
+    const response = await fetch("./products.json");
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await response.json();
+    const query = location.search;
+    const params = new URLSearchParams(query);
+    const idParam = params.get("id");
+    // console.log(id);
+    printDetails(idParam, data);
+    console.log("fetched products");
+  } catch (error) {
+    console.error("Error loading product: ", error);
+  }
+}
+
+fetchProducts();

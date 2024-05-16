@@ -222,6 +222,29 @@ main .container>div {
   font-weight: bold;
 }
 
+.fav-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fav-row i {
+  border: none;
+  color: rgb(149, 149, 149);
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  transition: color 200ms linear;
+}
+
+.fav-row i:hover {
+  color: #ff3b3c
+}
+
+.fav-row i.disabled {
+  color: white;
+  pointer-events: none;
+}
+
 #total {
   flex-grow: 1;
   height: fit-content;
@@ -259,6 +282,73 @@ h3 {
 .btn-primary:disabled {
   background-color: #909090;
   cursor: auto;
+}
+
+/* Favoritos ----- */
+
+#favoritos {
+  display: flex;
+  gap: 12px;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #F0F0F0;
+  border-radius: 14px;
+  overflow: hidden;
+  width: auto;
+  color: black;
+  text-decoration: none;
+  flex: 1;
+}
+
+.product-img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-info {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  word-wrap: break-word;
+  display: block;
+  line-height: 2rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.product-description {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.product-price-block {
+  display: flex;
+  margin: 5px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price-block .price {
+  font-size: 22px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.product-price-block .discount {
+  font-size: 12px;
+  font-weight: 700;
+  color: #428f13;
 }
 
 /* Footer -------- */
