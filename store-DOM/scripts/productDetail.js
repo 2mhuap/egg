@@ -1,3 +1,5 @@
+import manageOnline from "./modules/index/online.js";
+
 // printDetails
 // changeMini
 // changeSubtotal
@@ -11,7 +13,7 @@ function printDetails(id, products) {
   ${product.images
     .map(
       img => `<div class="thumbnail-container">
-    <img class="miniImg" src="${img}" alt="mini" onclick="changeMini(event)"/>
+    <img class="miniImg" src="${img}" alt="mini"/>
     </div>`
     )
     .join("")}
@@ -19,6 +21,9 @@ function printDetails(id, products) {
   `;
   const imagesSelector = document.querySelector(".product-images-block");
   imagesSelector.innerHTML = productImagesBlock;
+  imagesSelector
+    .querySelectorAll(".miniImg")
+    .forEach(i => (i.onclick = e => changeMini(e)));
 
   const productDescriptionBlock = `
   <h1 class="title">${product.title}</h1>
@@ -51,9 +56,19 @@ function printDetails(id, products) {
   );
 
   const cartButton = document.getElementById("add-to-cart");
-  cartButton.addEventListener("click", () => saveProduct(product));
+  cartButton.addEventListener("click", () => checkUserBeforeCart(product));
   const subtotalSelector = document.getElementById("subtotal");
   subtotalSelector.textContent = product.price;
+}
+
+function checkUserBeforeCart(product) {
+  const isOnline = JSON.parse(localStorage.getItem("isOnline"));
+  if (isOnline) {
+    saveProduct(product);
+  } else {
+    alert("Debe iniciar sesión antes de agregar al carrito");
+    window.location.href = "login.html";
+  }
 }
 
 function changeMini(e) {
@@ -88,8 +103,13 @@ function saveProduct(prod) {
     const prodExists = cart.find(p => p.id == prod.id);
     if (prodExists && prodExists.color == currColor) {
       prodExists.quantity += currQuantity;
+      Swal.fire({
+        title: "El producto ya se encuentra en el carrito",
+        text: `La nueva cantidad es ${prodExists.quantity}`,
+      });
     } else {
       cart.push(prodCart);
+      Swal.fire("El producto se agregó correctamente al carrito");
     }
 
     const stringifyProduct = JSON.stringify(cart);
@@ -119,3 +139,4 @@ async function fetchProducts() {
 }
 
 fetchProducts();
+manageOnline();

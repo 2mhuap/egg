@@ -89,8 +89,8 @@ header .logo img {
 }
 
 .social #cart-icon {
-  width: 30px;
-  margin-left: -2px;
+  height: 28px;
+  margin-bottom: -2px;
 }
 
 .social #fb-icon {
@@ -99,6 +99,21 @@ header .logo img {
 
 .social #insta-icon {
   margin-bottom: -2px;
+}
+
+.social #login img {
+  width: 38px;
+}
+
+.social #login i {
+  color: white;
+  font-size: 22px;
+  padding-top: 4px;
+  margin-left: 1px;
+}
+
+.social .fa-right-from-bracket {
+  cursor: pointer;
 }
 
 .search img {

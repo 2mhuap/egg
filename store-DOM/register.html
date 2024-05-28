@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regístrate - Tienda Virtual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/login.css" />
+    <script src="https://kit.fontawesome.com/57ae1b49d5.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <a class="logo" href="./index.html">
+        <img src="./assets/tiendamia-logo.svg" width="218" alt="Logo store" />
+      </a>
+    </header>
+    
+    <main>
+      <div class="container">
+        <h1>Regístrate</h1>
+        <form action="post">
+          <input id="input-email" type="email" name="email" placeholder="Tu dirección de E-mail" required>
+          <input id="input-pw"type="password" name="pw" placeholder="Contraseña" minlength="6" required>
+          <small class="pw-info"><a href="#">(?)</a>La contraseña debe tener al menos 6 caracteres.</small>
+          <label for="ofertas">
+            <input type="checkbox" name="ofertas" id="checkbox-ofertas">
+            <small>Recibir Ofertas</small>
+          </label>
+          <button id="register-btn" type="submit">Regístrate</button>
+        </form>
+        <p><small class="small-black">* Al ingresar con Facebook o Google estás aceptando recibir ofertas por email</small></p>
+        <p><small class="small-grey">Tiendamia está protegida por reCAPTCHA y se aplican la <a href="#">Politica de Privacidad</a> y los <a href="#">Términos de Servicio de Google</a>.</small></p>
+        <div id="no-cuenta">¿Ya tienes una cuenta?</div>
+        <a class="btn-link" href="./login.html">Ingresar</a>
+        <p id="registrar-terminos"><small>Al registrarte estás aceptando nuestros <a href="#">Terminos y Condiciones</a> y nuestras <a href="#">Politicas de Privacidad</a></small></p>
+      </div>
+    </main>
+  <!-- <script type="module" src="./scripts/modules/register/registerUser.js"></script> -->
+  <script type="module" src="./scripts/scriptRegister.js"></script>
+  </body>
+</html>

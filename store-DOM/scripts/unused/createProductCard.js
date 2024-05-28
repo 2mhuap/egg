@@ -1,4 +1,5 @@
 const img = "./assets/mock1.jpg";
+
 export default function createProductCard(product) {
   return `
     <a class="product-card" href="./details.html?id=${product.id}">
@@ -17,4 +18,3 @@ export default function createProductCard(product) {
     </a>
     `;
 }
-// export { createProductCard };

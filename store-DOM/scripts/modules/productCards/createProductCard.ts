@@ -1,5 +1,7 @@
+import ProductInterface from "../../ts/Product";
 const img = "./assets/mock1.jpg";
-export default function createProductCard(product) {
+
+export default function createProductCard(product: ProductInterface): string {
   return `
     <a class="product-card" href="./details.html?id=${product.id}">
       <img class="product-img" src="${
@@ -17,4 +19,5 @@ export default function createProductCard(product) {
     </a>
     `;
 }
+
 // export { createProductCard };

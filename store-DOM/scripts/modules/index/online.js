@@ -1,3 +1,4 @@
+import logoutUser from "../online/logoutUser.js";
 import updateLoginIcon from "../online/updateLoginIcon.js";
 
 // updateLoginIcon
@@ -9,14 +10,18 @@ export default function manageOnline() {
 
   loginSelector.addEventListener("click", () => {
     isOnline = JSON.parse(localStorage.getItem("isOnline"));
-    let newStatus;
-    if (isOnline == null) {
-      newStatus = true;
-    } else {
-      newStatus = !isOnline;
+    // let newStatus;
+    // if (isOnline == null) {
+    //   newStatus = true;
+    // } else {
+    //   newStatus = !isOnline;
+    // }
+    // localStorage.setItem("isOnline", JSON.stringify(newStatus));
+    // updateLoginIcon(newStatus);
+    if (isOnline) {
+      logoutUser();
+      updateLoginIcon(false);
     }
-    localStorage.setItem("isOnline", JSON.stringify(newStatus));
-    updateLoginIcon(newStatus);
   });
 
   updateLoginIcon(isOnline ?? false);

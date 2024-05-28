@@ -78,8 +78,6 @@ header .logo img {
 
 .social #cart-icon {
   height: 28px;
-  margin-left: -2px;
-  margin-right: -4px;
   margin-bottom: -2px;
 }
 
@@ -99,6 +97,11 @@ header .logo img {
   color: white;
   font-size: 22px;
   padding-top: 4px;
+  margin-left: 1px;
+}
+
+.social .fa-right-from-bracket {
+  cursor: pointer;
 }
 
 .search img {

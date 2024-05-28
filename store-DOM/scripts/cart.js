@@ -49,17 +49,20 @@ function printCartCards() {
 function updateTotal() {
   // let total = 0;
   // cart.forEach(p => (total += p.price * p.quantity));
-  const total = cart.reduce(
+  const newTotal = cart.reduce(
     (acc, { price, quantity }) => acc + price * quantity,
     0
   );
 
+  const old = document.getElementById("total-span").textContent;
+
   const totalSelector = document.getElementById("total-span");
-  totalSelector.textContent = total;
+  totalSelector.textContent = newTotal;
 
   const buySelector = document.getElementById("buy-button");
   const disableBuy = cart.length == 0;
   buySelector.disabled = disableBuy;
+  return { old, newTotal };
 }
 
 function changeQuantity(e) {
@@ -68,7 +71,14 @@ function changeQuantity(e) {
   const product = cart.find(p => p.id == prodId);
   product.quantity = Number(e.target.value);
   localStorage.setItem("cart", JSON.stringify(cart));
-  updateTotal();
+  const info = updateTotal();
+  Swal.fire({
+    position: "top-end",
+    title: "El total se actualizó",
+    text: `${info.old} -> ${info.newTotal}`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
 }
 
 updateCart();
