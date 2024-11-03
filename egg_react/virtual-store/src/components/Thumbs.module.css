@@ -1,0 +1,36 @@
+/* ---- Images ------ */
+
+.product-images-block {
+  max-width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: fit-content;
+  flex: 1;
+}
+
+.product-images-block .thumbnail-container {
+  grid-column: 1;
+}
+
+.product-images-block .thumbnail-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.product-images-block .main-image {
+  width: 100%;
+  grid-row: 1/5;
+  grid-column: 2/5;
+  margin-left: 4px;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+@media (min-width: 500px) {
+  .product-images-block {
+    min-width: auto;
+  }
+}

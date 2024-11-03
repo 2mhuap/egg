@@ -1,0 +1,83 @@
+#root,
+html {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+header,
+section,
+main,
+footer {
+  padding: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  /* border: 1px solid springgreen; */
+  height: inherit;
+  min-height: inherit;
+}
+
+.columns-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Products --------------- */
+
+main {
+  padding-top: 16px;
+  height: auto;
+}
+
+main .columns-container {
+  flex-direction: column;
+}
+
+/* Ofertas --------- */
+.sales-block {
+  margin-bottom: 32px;
+}
+
+.sales-block h2 {
+  font-size: 24px;
+  width: 100%;
+}
+
+.sales-block .product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+/* Media queries ----------- */
+
+@media (min-width: 500px) {
+
+  /* .search .form input {
+    width: 300px;
+  } */
+
+  .product-images-block,
+  .product-description-block {
+    min-width: auto;
+  }
+
+  main .columns-container {
+    flex-direction: row;
+  }
+
+  .product-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+}

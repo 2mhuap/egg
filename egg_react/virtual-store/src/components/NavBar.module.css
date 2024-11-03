@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  /* border: 1px solid springgreen; */
+  height: inherit;
+  min-height: inherit;
+}
+
+header,
+section {
+  padding: 8px;
+}
+
+/* header --------- */
+header {
+  /* height: 152px; */
+  background-color: #ff3b3c;
+}
+
+header .logo img {
+  width: 100px;
+}
+
+.search {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
+}
+
+.search .form {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.search .form form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.search .form input {
+  border-radius: 12px;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+
+}
+
+.search .social ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+}
+
+.social ul li:last-child img {
+  margin-top: 2px;
+}
+
+.social #cart-icon {
+  height: 28px;
+  margin-bottom: -2px;
+}
+
+.social #fb-icon {
+  width: 24px;
+}
+
+.social #insta-icon {
+  margin-bottom: -2px;
+}
+
+.social #login img {
+  width: 38px;
+}
+
+.social #login i {
+  color: white;
+  font-size: 22px;
+  padding-top: 4px;
+  margin-left: 1px;
+}
+
+.social .fa-right-from-bracket {
+  cursor: pointer;
+}
+
+.search img {
+  display: block;
+}
+
+.nav {
+  margin-top: 16px;
+}
+
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 500px) {
+
+  /* .search .form input {
+    width: 300px;
+  } */
+
+  header,
+  section {
+    padding: 16px;
+  }
+
+  header .logo img {
+    width: 150px;
+  }
+
+}

@@ -1,0 +1,10 @@
+.navBtn {
+  color: white;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+}
+
+.navBtn:hover {
+  text-decoration: underline;
+}

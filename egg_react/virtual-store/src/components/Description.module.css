@@ -1,0 +1,54 @@
+/* ---- Description ------ */
+.product-description-block {
+  flex: 1;
+}
+
+.product-description-block .title {
+  font-size: 28px;
+  margin-top: 0;
+}
+
+form.selector {
+  margin-top: 8px;
+}
+
+form.selector fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+form.selector label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+form.selector select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #c7c7c7;
+  width: 100%;
+}
+
+.product-description-block .description {
+  margin-top: 16px;
+}
+
+.product-description-block .description p:first-child {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.product-description-block .description p:last-child {
+  margin-top: 0;
+}
+
+@media (min-width: 500px) {
+  .product-description-block {
+    min-width: auto;
+  }
+
+
+}

@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  /* border: 1px solid springgreen; */
+  height: inherit;
+  min-height: inherit;
+}
+
+/* header,
+section,
+main,
+footer {
+  padding: 8px;
+} */
+
+/* Products --------------- */
+
+main {
+  padding-top: 16px;
+  height: auto;
+}
+
+.productContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
+/* Media queries ----------- */
+
+@media (min-width: 500px) {
+
+  /* .search .form input {
+    width: 300px;
+  } */
+
+  main,
+  footer {
+    padding: 16px;
+  }
+
+  /* .productContainer {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  } */
+
+}
