@@ -1,0 +1,18 @@
+p {
+  background-color: blue;
+  /* display: inline-block; */
+  width: 50px;
+  height: 50px;
+}
+
+a {
+  background-color: aqua;
+  /* display: block; */
+}
+
+div.cuadrado {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  /* display: inline; */
+}

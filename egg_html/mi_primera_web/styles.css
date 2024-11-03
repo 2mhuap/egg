@@ -1,0 +1,308 @@
+body {
+  font-family: "PT Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  background-color: rgb(223, 240, 255)
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(46, 0, 103);
+  padding: 24px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  /* -- */
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgb(30, 0, 67);
+  left: 100%;
+  padding: 24px;
+  font-size: 24px;
+  transition: left 0.5s;
+}
+
+nav li {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/* #check {
+  display: none;
+} */
+
+.active ul {
+  left: 0;
+  display: block;
+}
+
+.checkbtn {
+  cursor: pointer;
+}
+
+i {
+  color: #36cdfd;
+}
+
+h2 {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  color: rgb(117 26 229);
+}
+
+.acerca-de {
+  max-width: 500px;
+}
+
+.seccion-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 24px;
+  padding-bottom: 60px;
+  margin-top: 65.76px;
+}
+
+.acerca-imagen {
+  max-width: 500px;
+}
+
+.acerca-imagen img {
+  width: 100%;
+}
+
+.seccion-2 img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.seccion-3 h2 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding: 24px;
+}
+
+.proyecto {
+  width: 100%;
+}
+
+.proyecto img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: rgb(46, 0, 103);
+  padding: 16px;
+}
+
+footer h2 {
+  color: white;
+}
+
+footer a {
+  display: block;
+  width: fit-content;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+/* ---- FORMS.HTML ----- */
+
+/* ------------- Encabezado Contacto ------------- */
+
+.form-header {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.form-header h2 {
+  margin-bottom: 0;
+}
+
+.form-header p {
+  margin-bottom: 40px;
+}
+
+/* ------------- Formulario ------------- */
+
+.formulario {
+  width: 80%;
+}
+
+/* ------------- Campos del Formulario ------------- */
+
+.form-row {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.form-row input[type="text"],
+.form-row input[type="email"] {
+  font-family: "PT Mono", monospace;
+  background-color: rgb(223, 240, 255);
+  border: 0;
+  border-radius: 6px;
+  width: 100%;
+  padding: 7px;
+  font-size: 14px;
+}
+
+.form-row label {
+  text-align: initial;
+}
+
+.form-row textarea {
+  font-size: 14px;
+  background-color: rgb(223, 240, 255);
+  border: 0;
+  border-radius: 6px;
+
+  min-height: 100px;
+  padding: 8px;
+  resize: none;
+  width: 100%;
+}
+
+.form-row button {
+  font-size: 16px;
+  font-weight: bold;
+
+  width: 100px;
+
+  color: white;
+  background-color: rgb(46, 0, 103);
+  border: none;
+  border-radius: 4px;
+
+  padding: 16px;
+  cursor: pointer;
+}
+
+
+.form-row button:hover {
+  background-color: rgb(70, 9, 145);
+}
+
+
+.form-row button:active {
+  background-color: rgb(30, 0, 67);
+}
+
+.alertas {
+  color: red;
+}
+
+/* ------------- Para Pantallas de más de 700px ------------- */
+@media only screen and (min-width: 700px) {
+  .form-header {
+    padding: 32px;
+  }
+
+  .form-row {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .form-row input[type="text"],
+  .form-row input[type="email"] {
+    width: 250px;
+    height: initial;
+  }
+  .form-row label {
+    text-align: right;
+    width: 68px;
+    margin-top: 7px;
+    padding-right: 16px;
+  }
+
+  .form-row textarea {
+    width: 250px;
+  }
+
+  .form-row button {
+    margin-left: -78px;
+  }
+}
+
+/* ----- */
+
+@media (min-width: 769px) {
+
+  header {
+    padding: 8px 32px 8px 16px;
+  }
+
+  .checkbtn {
+    display: none;
+  }
+
+  nav ul, #check:checked ~ ul {
+    display: flex;
+    gap: 5vw;
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    font-size: 16px;
+    padding: 0;
+  }
+
+  nav li {
+    margin-bottom: 0;
+  }
+
+  .seccion-1 {
+    flex-direction: row;
+    padding: 100px 24px;
+  }
+
+  .acerca-imagen img {
+    width: 250px;
+  }
+
+  .tarjetas {
+    gap: 60px;
+    padding: 8px;
+  }
+
+  .proyecto {
+    width: 25%;
+  }
+
+}
