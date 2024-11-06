@@ -50,7 +50,7 @@ public class LibroServicio {
   }
 
   @Transactional
-  public void modificarLibro(String titulo, Integer ejemplares, UUID idAutor, UUID idEditorial, Long isbn) throws MiException {
+  public void modificarLibro(Long isbn, String titulo, Integer ejemplares, UUID idAutor, UUID idEditorial) throws MiException {
     validar(isbn, titulo, ejemplares, idAutor, idEditorial);
     Optional<Libro> respuestaLibro = libroRepositorio.findById(isbn);
     Optional<Autor> respuestaAutor = autorRepositorio.findById(idAutor);
@@ -67,6 +67,11 @@ public class LibroServicio {
 
       libroRepositorio.save(libro);
     }
+  }
+
+  @Transactional(readOnly = true)
+  public Libro getOne(Long isbn){
+    return libroRepositorio.getReferenceById(isbn);
   }
 
   private void validar(Long isbn, String titulo, Integer ejemplares, UUID idAutor, UUID idEditorial) throws MiException {
