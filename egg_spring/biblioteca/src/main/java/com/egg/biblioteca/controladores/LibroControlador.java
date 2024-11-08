@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,13 +33,14 @@ public class LibroControlador {
   @Autowired
   EditorialServicio editorialServicio;
 
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
   @GetMapping("/registrar")
   public String registrar(ModelMap modelo) {
     popularListas(modelo);
-
     return "libro_form.html";
   }
 
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
   @PostMapping("/registro")
   public String registro(
       @RequestParam(required = false) Long isbn,
@@ -60,6 +62,7 @@ public class LibroControlador {
     return "index.html";
   }
 
+  @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
   @GetMapping("/lista")
   public String listar(ModelMap modelo) {
     List<Libro> libros = libroServicio.listarLibros();
@@ -67,6 +70,7 @@ public class LibroControlador {
     return "libro_list.html";
   }
 
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
   @GetMapping("/modificar/{isbn}")
   public String modificar(@PathVariable Long isbn, ModelMap modelo) {
     modelo.put("libro", libroServicio.getOne(isbn));
@@ -74,6 +78,7 @@ public class LibroControlador {
     return "libro_modificar.html";
   }
 
+  @PreAuthorize("hasRole('ROLE_ADMIN')")
   @PostMapping("{isbn}")
   public String modificar(@PathVariable Long isbn, String titulo, Integer ejemplares, UUID idAutor,
       UUID idEditorial, ModelMap modelo) {

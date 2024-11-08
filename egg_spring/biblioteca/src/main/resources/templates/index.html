@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
-<head>
-  <meta charset="utf-8">
+<head th:insert="~{/fragments/head :: head}">
   <title>Biblioteca Egg</title>
-  <link href="css/one-page-wonder.min.css" rel="stylesheet">
-  <!-- CSS only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -24,55 +18,17 @@
     </button>
     <div class="collapse navbar-collapse elementosNav" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto elementos">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/login}"
             aria-expanded="false">
-            Libros
+            Ingresar
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-            <li><a class="dropdown-item" th:href="@{/libro/registrar}">Crear Libro</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li><a class="dropdown-item" th:href="@{/libro/lista}">Listar Libros</a></li>
-          </ul>
         </li>
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/registrar}"
             aria-expanded="false">
-            Autores
+            Registrate!
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-            <li><a class="dropdown-item" th:href="@{/autor/registrar}">Crear Autor</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li><a class="dropdown-item" th:href="@{/autor/lista}">Listar Autores</a></li>
-          </ul>
-        </li>
-
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Editoriales
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-            <li><a class="dropdown-item" th:href="@{/editorial/registrar}">Crear Editorial</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li><a class="dropdown-item" th:href="@{/editorial/lista}">Listar Editoriales</a></li>
-          </ul>
         </li>
       </ul>
     </div>
