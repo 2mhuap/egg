@@ -65,7 +65,7 @@ public class PortalControlador {
   @GetMapping("/inicio")
   public String inicio(HttpSession session) {
     Usuario logeado = (Usuario) session.getAttribute("usuariosession");
-    if (logeado.getRol().equals(Rol.ADMIN)){
+    if (logeado != null && logeado.getRol().equals(Rol.ADMIN)){
       return "redirect:/admin/dashboard";
     }
     return "inicio.html";

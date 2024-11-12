@@ -1,0 +1,14 @@
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navBar">
+  <div class="containerImg">
+    <a href="/" class="navbar-brand d-flex align-items-center">
+      <img class="logo" src="/img/Egg.png" alt="Img logo egg">
+    </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse elementosNav" id="navbarNavDropdown">
+    <ul th:replace="${session.usuariosession == null} ? ~{/fragments/menu_sin_login :: nav_ul} : ~{/fragments/menu_logeado :: nav_ul}"></ul>
+  </div>
+</nav>

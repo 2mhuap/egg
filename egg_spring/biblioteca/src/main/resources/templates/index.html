@@ -1,38 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<html xmlns:th="http://www.thymeleaf.org">
 
-<head th:insert="~{/fragments/head :: head}">
-  <title>Biblioteca Egg</title>
+<head th:replace="~{/fragments/head :: head ('Biblioteca Egg')}">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navBar">
-    <div class="containerImg">
-      <a href="/" class="navbar-brand d-flex align-items-center">
-        <img class="logo" src="/img/Egg.png" alt="Img logo egg">
-      </a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse elementosNav" id="navbarNavDropdown">
-      <ul class="navbar-nav ms-auto elementos">
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/login}"
-            aria-expanded="false">
-            Ingresar
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" th:href="@{/registrar}"
-            aria-expanded="false">
-            Registrate!
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <nav th:replace="~{/fragments/navbar :: navbar}"></nav>
 
   <div th:if="${exito}!=null" class="card text-white bg-success mb-3 mt-3 mensajeExito">
     <div class="card-body">
