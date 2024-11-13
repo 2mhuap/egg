@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.egg.biblioteca.entidades.Usuario;
 import com.egg.biblioteca.enumeraciones.Rol;
@@ -41,10 +42,11 @@ public class PortalControlador {
     @RequestParam String email,
     @RequestParam String password,
     @RequestParam String password2,
+    @RequestParam(required = false) MultipartFile archivo,
     ModelMap modelo
   ) {
     try {
-      usuarioServicio.registrar(nombre, email, password, password2);
+      usuarioServicio.registrar(nombre, email, password, password2, archivo);
     } catch (MiException e) {
       Logger.getLogger(PortalControlador.class.getName()).info(e.getMessage());
       modelo.put("error", e.getMessage());
