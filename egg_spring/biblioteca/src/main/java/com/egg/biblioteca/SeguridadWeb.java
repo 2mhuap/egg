@@ -18,7 +18,7 @@ public class SeguridadWeb {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
     .authorizeHttpRequests(authorize -> authorize
-      .requestMatchers("/admin/**", "**/modificar/**").hasRole(Rol.ADMIN.name())
+      .requestMatchers("/admin/**").hasRole(Rol.ADMIN.name())
       // .requestMatchers("/css/", "/js/", "/img/", "/**").permitAll()
       .requestMatchers("/css/**", "/js/**", "/img/**", "/**").permitAll()
 
